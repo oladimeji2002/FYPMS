@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FYPMS — Final Year Project Management System</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/js/app.js"></script>
+
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     AUTH LAYER — shows first, hides on login
+════════════════════════════════════════ -->
+<div id="auth-layer">
+
+  <!-- ── SCREEN 1: LANDING ── -->
+  <div id="screen-landing" class="auth-screen active">
+    <div class="landing-page">
+
+      <!-- Nav -->
+      <nav class="lp-nav">
+        <div class="lp-logo">
+          <div class="lp-logo-box">FY</div>
+          <div>
+            <div class="lp-logo-text">FYPMS</div>
+            <div class="lp-logo-sub">Project Management</div>
+          </div>
+        </div>
+        <div class="lp-nav-actions">
+          <button class="lp-btn-ghost" onclick="showAuth('login')">Log In</button>
+          <button class="lp-btn-solid" onclick="showAuth('register')">Get Started</button>
+        </div>
+      </nav>
+
+      <!-- Hero -->
+      <section class="lp-hero">
+        <div class="lp-tag">🎓 College & HND Level</div>
+        <h1 class="lp-h1">Manage Your Final Year<br>Project <em>Smarter</em></h1>
+        <p class="lp-desc">A unified platform where students track milestones, supervisors give feedback, and everyone stays on the same page — from proposal to final submission.</p>
+        <div class="lp-cta">
+          <button class="lp-cta-primary" onclick="showAuth('register')">Create Free Account →</button>
+          <button class="lp-cta-secondary" onclick="showAuth('login')">Sign In to System</button>
+        </div>
+        <div class="lp-stats">
+          <div class="lp-stat"><div class="lp-stat-num">500+</div><div class="lp-stat-label">Students</div></div>
+          <div class="lp-stat"><div class="lp-stat-num">48</div><div class="lp-stat-label">Supervisors</div></div>
+          <div class="lp-stat"><div class="lp-stat-num">94%</div><div class="lp-stat-label">On-Time Rate</div></div>
+          <div class="lp-stat"><div class="lp-stat-num">3</div><div class="lp-stat-label">Departments</div></div>
+        </div>
+      </section>
+
+      <!-- Features strip -->
+      <div class="lp-features">
+        <div class="lp-feat"><div class="lp-feat-icon">📋</div><div class="lp-feat-title">Proposal Workflow</div><div class="lp-feat-text">Submit, review, and approve project proposals online with full audit trail.</div></div>
+        <div class="lp-feat"><div class="lp-feat-icon">🎯</div><div class="lp-feat-title">Milestone Tracking</div><div class="lp-feat-text">Set deadlines, upload deliverables, and track completion at a glance.</div></div>
+        <div class="lp-feat"><div class="lp-feat-icon">💬</div><div class="lp-feat-title">Instant Feedback</div><div class="lp-feat-text">Supervisors annotate submissions and students get notified immediately.</div></div>
+        <div class="lp-feat"><div class="lp-feat-icon">📅</div><div class="lp-feat-title">Meeting Scheduler</div><div class="lp-feat-text">Request, confirm, and log supervisor meetings with agendas and minutes.</div></div>
+        <div class="lp-feat"><div class="lp-feat-icon">📊</div><div class="lp-feat-title">Live Assessment</div><div class="lp-feat-text">Grade students using a structured rubric. View grades instantly.</div></div>
+      </div>
+
+      <!-- How it works -->
+      <div class="lp-how">
+        <div class="lp-how-title">How It Works</div>
+        <div class="lp-how-sub">From registration to final grade in four simple steps</div>
+        <div class="lp-steps">
+          <div class="lp-step"><div class="lp-step-num">1</div><div class="lp-step-title">Create Account</div><div class="lp-step-text">Register with your institutional email. Choose your role — student or supervisor.</div></div>
+          <div class="lp-step"><div class="lp-step-num">2</div><div class="lp-step-title">Submit Proposal</div><div class="lp-step-text">Write and submit your project idea. Your supervisor reviews and provides feedback.</div></div>
+          <div class="lp-step"><div class="lp-step-num">3</div><div class="lp-step-title">Track Progress</div><div class="lp-step-text">Upload deliverables per milestone. Get feedback, schedule meetings, stay on track.</div></div>
+          <div class="lp-step"><div class="lp-step-num">4</div><div class="lp-step-title">Get Assessed</div><div class="lp-step-text">Your supervisor marks your project using the rubric. View your final grade instantly.</div></div>
+        </div>
+      </div>
+
+      <!-- Role cards -->
+      <div class="lp-roles">
+        <div class="lp-roles-title">Built for Everyone</div>
+        <div class="lp-roles-sub">Two tailored portals. One seamless system.</div>
+        <div class="lp-role-cards">
+          <div class="lp-role-card" onclick="showAuth('register')">
+            <div class="lp-role-icon">🎓</div>
+            <div class="lp-role-name">Students</div>
+            <div class="lp-role-desc">Track your project from day one to final submission with a clear, guided workflow.</div>
+            <ul class="lp-role-perks">
+              <li>Submit and manage project proposals</li>
+              <li>Upload milestone deliverables</li>
+              <li>Read supervisor feedback instantly</li>
+              <li>Request and track meetings</li>
+              <li>View your assessment grade</li>
+            </ul>
+          </div>
+          <div class="lp-role-card" onclick="showAuth('register')">
+            <div class="lp-role-icon">👩‍🏫</div>
+            <div class="lp-role-name">Supervisors</div>
+            <div class="lp-role-desc">Manage all your assigned students from a single dashboard with full visibility.</div>
+            <ul class="lp-role-perks">
+              <li>Review and approve proposals</li>
+              <li>Define and assign milestones</li>
+              <li>Leave structured feedback</li>
+              <li>Manage meeting schedules</li>
+              <li>Enter assessment marks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="lp-footer">
+        <span class="lp-footer-text">© 2025 FYPMS — Final Year Project Management System. College / HND Level.</span>
+        <span class="lp-footer-text">Built for academic institutions.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SCREEN 2: LOGIN ── -->
+  <div id="screen-login" class="auth-screen">
+    <div class="auth-panel-page">
+      <div class="auth-left">
+        <div style="position:relative;z-index:1">
+          <div class="auth-brand-icon">FY</div>
+          <div class="auth-brand-title">Welcome back to FYPMS</div>
+          <div class="auth-brand-sub">Sign in to continue managing your final year project journey — milestones, feedback, and more.</div>
+          <div class="auth-feat"><div class="auth-feat-icon">🎯</div><div class="auth-feat-text"><strong>Track Every Milestone</strong>Stay on top of deadlines and deliverables.</div></div>
+          <div class="auth-feat"><div class="auth-feat-icon">💬</div><div class="auth-feat-text"><strong>Real-Time Feedback</strong>Communicate seamlessly with your supervisor.</div></div>
+          <div class="auth-feat"><div class="auth-feat-icon">📊</div><div class="auth-feat-text"><strong>Instant Assessment</strong>View rubric-based grades as soon as they're submitted.</div></div>
+        </div>
+      </div>
+      <div class="auth-right">
+        <div class="auth-form-wrap">
+          <button class="auth-back" onclick="showAuth('landing')">← Back to Home</button>
+          <div class="auth-form-title">Sign In</div>
+          <div class="auth-form-sub">Enter your institutional credentials to continue</div>
+
+          <div class="auth-input-group">
+            <label class="auth-label">Email Address</label>
+            <input class="auth-input" id="login-email" type="email" placeholder="you@college.edu" oninput="clearErr('login-email')"/>
+            <div class="err-msg" id="err-login-email">Please enter a valid email address.</div>
+          </div>
+          <div class="auth-input-group">
+            <label class="auth-label">Password</label>
+            <div class="pass-wrap">
+              <input class="auth-input" id="login-pass" type="password" placeholder="Enter your password" oninput="clearErr('login-pass')"/>
+              <button class="pass-toggle" onclick="togglePass('login-pass',this)">👁</button>
+            </div>
+            <div class="err-msg" id="err-login-pass">Password is required.</div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:8px">
+            <label style="display:flex;align-items:center;gap:7px;font-size:13px;color:var(--mid);cursor:pointer">
+              <input type="checkbox" style="accent-color:var(--blue)"/> Remember me
+            </label>
+            <span class="auth-link" style="font-size:13px">Forgot password?</span>
+          </div>
+          <button class="auth-btn auth-btn-primary" onclick="doLogin()">Sign In →</button>
+          <div class="auth-divider">or continue as</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <button class="auth-btn" style="background:#EBF3FB;color:var(--blue);margin-top:0" onclick="quickLogin('student')">🎓 Student Demo</button>
+            <button class="auth-btn" style="background:#FEF0E0;color:#C06010;margin-top:0" onclick="quickLogin('supervisor')">👩‍🏫 Supervisor Demo</button>
+          </div>
+          <div class="auth-footer-text">Don't have an account? <span class="auth-link" onclick="showAuth('register')">Create one now</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SCREEN 3: REGISTER ── -->
+  <div id="screen-register" class="auth-screen">
+    <div class="auth-panel-page">
+      <div class="auth-left">
+        <div style="position:relative;z-index:1">
+          <div class="auth-brand-icon">FY</div>
+          <div class="auth-brand-title">Join FYPMS Today</div>
+          <div class="auth-brand-sub">Create your account in under two minutes and start managing your final year project the smart way.</div>
+          <div class="auth-feat"><div class="auth-feat-icon">🔒</div><div class="auth-feat-text"><strong>Secure &amp; Private</strong>Your data is encrypted and never shared.</div></div>
+          <div class="auth-feat"><div class="auth-feat-icon">📧</div><div class="auth-feat-text"><strong>Email Verification</strong>Accounts are verified using your institutional email.</div></div>
+          <div class="auth-feat"><div class="auth-feat-icon">⚡</div><div class="auth-feat-text"><strong>Instant Access</strong>Start using the system right after verification.</div></div>
+        </div>
+      </div>
+      <div class="auth-right">
+        <div class="auth-form-wrap">
+          <button class="auth-back" onclick="showAuth('landing')">← Back to Home</button>
+          <div class="auth-form-title">Create Account</div>
+          <div class="auth-form-sub">Fill in your details to get started</div>
+
+          <!-- Step indicator -->
+          <div id="reg-steps" style="display:flex;gap:8px;margin-bottom:24px;align-items:center">
+            <div id="rs1" style="height:4px;flex:1;border-radius:2px;background:var(--blue);transition:background .3s"></div>
+            <div id="rs2" style="height:4px;flex:1;border-radius:2px;background:var(--border);transition:background .3s"></div>
+            <div id="rs3" style="height:4px;flex:1;border-radius:2px;background:var(--border);transition:background .3s"></div>
+            <span id="reg-step-label" style="font-size:11px;color:var(--light);white-space:nowrap">Step 1 of 3</span>
+          </div>
+
+          <!-- Step 1: Role & Personal -->
+          <div id="reg-step1">
+            <div style="font-size:12px;font-weight:700;color:var(--mid);text-transform:uppercase;letter-spacing:0.4px;margin-bottom:10px">I am a…</div>
+            <div class="role-sel">
+              <div class="role-opt sel" id="role-student" onclick="selectRole('student')">
+                <div class="ri">🎓</div><div class="rn">Student</div><div class="rd">HND / College</div>
+              </div>
+              <div class="role-opt" id="role-supervisor" onclick="selectRole('supervisor')">
+                <div class="ri">👩‍🏫</div><div class="rn">Supervisor</div><div class="rd">Lecturer / Staff</div>
+              </div>
+            </div>
+            <div class="auth-input-group">
+              <label class="auth-label">Full Name</label>
+              <input class="auth-input" id="reg-name" type="text" placeholder="e.g. alabaonome " oninput="clearErr('reg-name')"/>
+              <div class="err-msg" id="err-reg-name">Please enter your full name.</div>
+            </div>
+            <div class="auth-input-group">
+              <label class="auth-label">Institutional Email</label>
+              <input class="auth-input" id="reg-email" type="email" placeholder="you@college.edu" oninput="clearErr('reg-email')"/>
+              <div class="err-msg" id="err-reg-email">Please enter a valid institutional email.</div>
+            </div>
+            <div class="auth-input-group" id="reg-matric-group">
+                <label class="auth-label">Matric Number</label>
+                <input class="auth-input"id="reg-matric"type="text"placeholder="e.g 21/69/0001">
+            </div>
+
+          <div class="auth-input-group">
+              <label>Department</label>
+              <input type="text" id="reg-department">
+          </div>
+        <div class="auth-input-group">
+            <label class="auth-label">Phone Number</label>
+            <input class="auth-input" id="reg-phone" type="text" placeholder="e.g 08012345678">
+        </div>
+            <button class="auth-btn auth-btn-primary" onclick="regNext(1)">Continue →</button>
+          </div>
+
+          <!-- Step 2: Password & Dept -->
+          <div id="reg-step2" style="display:none">
+            <div class="auth-input-group">
+              <label class="auth-label">Department / Programme</label>
+              <select class="auth-input" id="reg-dept">
+                <option value="">Select department…</option>
+                <option>Computing &amp; IT</option>
+                <option>Business Studies</option>
+                <option>Engineering</option>
+                <option>Health Sciences</option>
+                <option>Media &amp; Communication</option>
+              </select>
+              <div class="err-msg" id="err-reg-dept">Please select your department.</div>
+            </div>
+            <div class="auth-input-group" id="reg-yr-group">
+              <label class="auth-label">Year of Study</label>
+              <select class="auth-input" id="reg-year">
+                <option value="">Select year…</option>
+                <option>Year 1</option>
+                <option>Year 2 (Final Year)</option>
+                <option>HND Year 1</option>
+                <option>HND Year 2 (Final)</option>
+              </select>a
+              <div class="err-msg" id="err-reg-year">Please select your year.</div>
+            </div>
+            <div class="auth-input-group">
+              <label class="auth-label">Create Password</label>
+              <div class="pass-wrap">
+                <input class="auth-input" id="reg-pass" type="password" placeholder="Min. 8 characters" oninput="checkStrength()"/>
+                <button class="pass-toggle" onclick="togglePass('reg-pass',this)">👁</button>
+              </div>
+              <div class="strength-wrap">
+                <div class="str-seg" id="ss1"></div>
+                <div class="str-seg" id="ss2"></div>
+                <div class="str-seg" id="ss3"></div>
+                <div class="str-seg" id="ss4"></div>
+              </div>
+              <div class="strength-lbl" id="strength-lbl">Enter a password</div>
+              <div class="err-msg" id="err-reg-pass">Password must be at least 8 characters.</div>
+            </div>
+            <div class="auth-input-group">
+              <label class="auth-label">Confirm Password</label>
+              <div class="pass-wrap">
+                <input class="auth-input" id="reg-pass2" type="password" placeholder="Repeat password" oninput="clearErr('reg-pass2')"/>
+                <button class="pass-toggle" onclick="togglePass('reg-pass2',this)">👁</button>
+              </div>
+              <div class="err-msg" id="err-reg-pass2">Passwords do not match.</div>
+            </div>
+            <div style="display:flex;gap:10px;margin-top:4px">
+              <button class="auth-btn" style="background:#EBF3FB;color:var(--blue);margin-top:0;flex:0 0 auto;padding:13px 20px" onclick="regBack()">← Back</button>
+              <button class="auth-btn auth-btn-primary" style="flex:1" onclick="regNext(2)">Continue →</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Agree & Submit -->
+          <div id="reg-step3" style="display:none">
+            <div style="background:#F7FAFF;border-radius:12px;padding:18px 16px;margin-bottom:16px;border:1px solid var(--border)">
+              <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px">Review Your Details</div>
+              <div style="font-size:13px;color:var(--mid);line-height:1.8" id="reg-review"></div>
+            </div>
+            <div class="auth-check-row">
+              <input type="checkbox" id="chk-terms"/>
+              <label for="chk-terms">I agree to the <span class="auth-link">Terms of Service</span> and <span class="auth-link">Privacy Policy</span></label>
+            </div>
+            <div class="auth-check-row">
+              <input type="checkbox" id="chk-data"/>
+              <label for="chk-data">I consent to my data being stored securely for academic management purposes</label>
+            </div>
+            <div class="err-msg" id="err-reg-terms">Please accept the terms and conditions to proceed.</div>
+            <div style="display:flex;gap:10px;margin-top:4px">
+              <button class="auth-btn" style="background:#EBF3FB;color:var(--blue);margin-top:0;flex:0 0 auto;padding:13px 20px" onclick="regBack2()">← Back</button>
+              <button class="auth-btn auth-btn-primary" style="flex:1" onclick="doRegister()">Create Account ✓</button>
+            </div>
+            <div class="auth-footer-text">Already have an account? <span class="auth-link" onclick="showAuth('login')">Sign in</span></div>
+          </div>
+
+          <!-- Step 4: Success -->
+          <div id="reg-step4" style="display:none">
+            <div class="auth-success">
+              <div class="auth-success-icon">✅</div>
+              <div class="auth-success-title">Account Created!</div>
+              <div class="auth-success-sub">Welcome aboard. Your account is ready.<br>Click below to enter the system.</div>
+              <button class="auth-btn auth-btn-primary" onclick="enterSystem()"> Enter FYPMS → </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /#auth-layer -->
+
+<!-- ═══ TOP NAV ═══ -->
+<nav id="top-nav">
+  <div class="nav-brand">
+    <button id="hamburger" onclick="toggleSidebar()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div>
+      <div class="nav-title">FYPMS</div>
+      <div class="nav-sub">Final Year Project Management</div>
+    </div>
+  </div>
+  <div class="nav-right">
+    <div class="notif-wrap" onclick="showPage('notifications')">
+      🔔<span class="notif-badge" id="notif-count">3</span>
+    </div>
+    <div class="nav-avatar" id="nav-avatar">AO</div>
+    <div class="nav-user">
+      <div class="name" id="nav-name">Amara Osei</div>
+      <div class="role-label" id="nav-role-label">HND Computing Yr 2</div>
+    </div>
+    <!-- <button id="role-toggle" onclick="toggleRole()">Switch to Supervisor →</button> -->
+  </div>
+</nav>
+
+<!-- ═══ BODY ═══ -->
+<div id="app-body">
+
+  <!-- Sidebar overlay (tablet) -->
+  <div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar">
+    <div class="sidebar-label" id="sidebar-label">Student Portal</div>
+    <div id="sidebar-nav">
+      <div id="sidebar-nav"></div>
+
+    <div class="sidebar-footer">
+        <div class="nav-item logout-btn"
+            onclick="logout()">
+            <span>🚪</span> Logout
+        </div>
+    </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main id="main">
+
+<!-- ══ STUDENT: DASHBOARD ══ -->
+
+
+<!-- ══ STUDENT: DASHBOARD ══ -->
+<div id="page-dashboard" class="page">
+
+    <div class="page-title">
+        Welcome back,
+        <span id="student-name">Student</span> 👋
+    </div>
+
+    <div class="page-sub">
+        <span id="student-department">
+            Department
+        </span>
+    </div>
+
+    <div class="card-grid">
+
+        <div class="stat-card" style="border-top:4px solid #1A5FA8">
+            <div class="stat-num" id="project-status">
+                -
+            </div>
+            <div class="stat-label">
+                Project Status
+            </div>
+        </div>
+
+        <div class="stat-card" style="border-top:4px solid #27AE60">
+            <div class="stat-num" id="milestones-done">
+                0 / 0
+            </div>
+            <div class="stat-label">
+                Milestones Done
+            </div>
+        </div>
+
+        <div class="stat-card" style="border-top:4px solid #E67E22">
+            <div class="stat-num">
+                --
+            </div>
+            <div class="stat-label">
+                Next Due
+            </div>
+        </div>
+
+        <div class="stat-card" style="border-top:4px solid #3B8DD6">
+            <div class="stat-num" id="unread-feedback">
+                0 New
+            </div>
+            <div class="stat-label">
+                Unread Feedback
+            </div>
+        </div>
+
+    </div>
+
+    <div class="two-col">
+
+        <div class="section-card">
+
+            <div class="section-title">
+                Overall Project Progress
+            </div>
+
+            <div class="progress-row">
+                <span>Completion</span>
+                <span id="project-progress-text">
+                    0%
+                </span>
+            </div>
+
+            <div class="progress-bar" style="margin-bottom:16px">
+
+                <div
+                    id="project-progress-bar"
+                    class="progress-fill"
+                    style="width:0%;background:#1A5FA8">
+                </div>
+
+            </div>
+
+            <button
+                class="btn btn-outline"
+                style="width:100%;margin-top:14px"
+                onclick="showPage('milestones')">
+
+                View All Milestones
+
+            </button>
+
+        </div>
+
+        <div class="col-stack">
+
+            <div class="section-card">
+
+                <div class="section-title">
+                    Feedback Summary
+                </div>
+
+                <div class="deadline-row">
+
+                    <span>
+                        Total Unread Feedback
+                    </span>
+
+                    <span id="feedback-count">
+                        0
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="section-card">
+
+                <div class="section-title">
+                    Quick Actions
+                </div>
+
+                <div class="action-stack">
+
+                    <button
+                        class="btn btn-primary btn-block"
+                        onclick="showPage('project')">
+
+                        📁 My Project
+
+                    </button>
+
+                    <button
+                        class="btn btn-outline btn-block"
+                        onclick="showPage('milestones')">
+
+                        🎯 Milestones
+
+                    </button>
+
+                    <button
+                        class="btn btn-default btn-block"
+                        onclick="showPage('feedback')">
+
+                        💬 Feedback
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ══ SUPERVISOR: DASHBOARD ══ -->
+<div id="page-sv-dashboard" class="page">
+
+    <div class="page-title">
+        Supervisor Dashboard
+    </div>
+
+    <div class="page-sub">
+        Welcome back,
+        <span id="sv-name">Supervisor</span>
+    </div>
+
+    <div class="card-grid">
+
+        <div class="stat-card"
+            style="border-top:4px solid #1A5FA8">
+
+            <div class="stat-num"
+                id="sv-assigned">
+                0
+            </div>
+
+            <div class="stat-label">
+                Assigned Students
+            </div>
+
+        </div>
+
+        <div class="stat-card"
+            style="border-top:4px solid #E67E22">
+
+            <div class="stat-num"
+                id="sv-pending">
+                0
+            </div>
+
+            <div class="stat-label">
+                Pending Proposals
+            </div>
+
+        </div>
+
+        <div class="stat-card"
+            style="border-top:4px solid #3B8DD6">
+
+            <div class="stat-num"
+                id="sv-meetings">
+                0
+            </div>
+
+            <div class="stat-label">
+                Meetings Scheduled
+            </div>
+
+        </div>
+
+        <div class="stat-card"
+            style="border-top:4px solid #E74C3C">
+
+            <div class="stat-num"
+                id="sv-assessments">
+                0
+            </div>
+
+            <div class="stat-label">
+                Assessments Pending
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="section-card">
+
+        <div style="
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:14px;
+            flex-wrap:wrap;
+            gap:10px">
+
+            <div class="section-title"
+                style="margin-bottom:0">
+
+                Student Progress Overview
+
+            </div>
+
+            <button
+                class="btn btn-outline"
+                onclick="showPage('sv-students')">
+
+                View All
+
+            </button>
+
+        </div>
+
+        <div class="table-wrap">
+
+            <table class="data-table">
+
+                <thead>
+
+                    <tr>
+                        <th>Student</th>
+                        <th>Project</th>
+                        <th>Status</th>
+                        <th>Progress</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="sv-dashboard-students">
+
+                    <tr>
+                        <td colspan="4"
+                            style="text-align:center">
+
+                            No students assigned
+
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- ══ STUDENT: MY PROJECT ══ -->
+ <div id="page-project" class="page">
+  <div class="page-title">My Project</div>
+  <div class="page-sub">Project details and proposal status</div>
+
+  <div style="margin-bottom:20px;">
+      <button class="btn btn-primary"
+              onclick="openModal('create-project')">
+          ➕ Create Project
+      </button>
+  </div>
+
+  <button
+    id="edit-project-btn"
+    class="btn btn-outline"
+    onclick="openEditProject()">
+    ✏ Edit Project
+</button>
+
+  <div class="section-card">
+
+          <div class="project-detail-header">
+
+              <div class="project-title-block">
+                  <div class="proj-title" id="project-title">
+                      No Project Yet
+                  </div>
+
+                  <span class="badge"
+                        id="project-status"
+                        style="background:#1A5FA820;color:#1A5FA8">
+                      Pending
+                  </span>
+              </div>
+
+              <div class="supervisor-block">
+                  <div class="sup-label">Supervisor</div>
+
+                  <div class="sup-name" id="project-supervisor">
+                      Not Assigned
+                  </div>
+
+                  <div class="sup-dept" id="project-department">
+                      -
+                  </div>
+              </div>
+
+          </div>
+
+          <hr class="section-divider"/>
+
+          <div class="proj-section-label">
+              Project Description
+          </div>
+
+          <p class="proj-desc" id="project-description">
+              No project description available.
+          </p>
+
+          <hr class="section-divider"/>
+
+          <div class="proj-section-label">
+              Objectives
+          </div>
+
+          <div id="project-objectives">
+              No objectives added yet.
+          </div>
+
+          <div class="proj-meta-grid">
+
+              <div class="proj-meta-box" style="background:#F0F6FF">
+                  <div class="meta-label">Submitted</div>
+                  <div class="meta-value" id="project-submitted">
+                      -
+                  </div>
+              </div>
+
+              <div class="proj-meta-box" style="background:#F0FFF4">
+                  <div class="meta-label">Approved</div>
+                  <div class="meta-value"
+                      id="project-approved"
+                      style="color:#27AE60">
+                      -
+                  </div>
+              </div>
+
+              <div class="proj-meta-box" style="background:#FFF8F0">
+                  <div class="meta-label">Academic Year</div>
+                  <div class="meta-value" id="project-session">
+                      -
+                  </div>
+              </div>
+
+          </div>
+
+      </div>
+
+  </div>
+
+    <!-- ══ STUDENT: MILESTONES ══ -->
+    <div id="page-milestones" class="page">
+
+        <div class="page-title">
+            Milestones
+        </div>
+
+        <div class="page-sub">
+            Track your project checkpoints and upload deliverables
+        </div>
+
+        <div style="margin-bottom:15px">
+
+            <button
+                class="btn btn-primary"
+                onclick="openMilestoneModal()">
+
+                + Add Milestone
+
+            </button>
+
+        </div>
+
+        <div id="student-milestones-container">
+
+            <div class="milestone-card">
+
+                Loading milestones...
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ══ STUDENT: FEEDBACK ══ -->
+    <div id="page-feedback" class="page">
+      <div class="page-title">Supervisor Feedback</div>
+      <div class="page-sub">Comments and guidance from Dr. Kojo Mensah</div>
+      <div class="feedback-card" style="border-left:4px solid #D6E4F7">
+        <div class="feedback-header">
+          <div class="feedback-meta"><span style="font-weight:700;font-size:14px;color:#0F2D52">Dr. Kojo Mensah</span><span class="badge" style="background:#3B8DD620;color:#3B8DD6">Literature Review</span></div>
+          <span style="font-size:12px;color:#8AA0B8">Feb 12, 2025</span>
+        </div>
+        <p class="feedback-text">Good coverage of existing systems. However, please expand on the comparison between traditional voting systems and digital alternatives — this section needs more depth.</p>
+      </div>
+      <div class="feedback-card" style="border-left:4px solid #D6E4F7">
+        <div class="feedback-header">
+          <div class="feedback-meta"><span style="font-weight:700;font-size:14px;color:#0F2D52">Dr. Kojo Mensah</span><span class="badge" style="background:#3B8DD620;color:#3B8DD6">Project Proposal</span></div>
+          <span style="font-size:12px;color:#8AA0B8">Jan 18, 2025</span>
+        </div>
+        <p class="feedback-text">Well-structured proposal. The objectives are clearly defined. Approved — please proceed to the literature review phase.</p>
+      </div>
+    </div>
+
+    <!-- ══ STUDENT: MEETINGS ══ -->
+    <div id="page-meetings" class="page">
+      <div class="page-header-row">
+        <div class="page-title">Meetings</div>
+        <button class="btn btn-primary" onclick="openModal('meeting')">+ Request Meeting</button>
+      </div>
+      <div class="page-sub">Meetings with Dr. Kojo Mensah</div>
+      <div class="meeting-card" style="border-left:4px solid #27AE60">
+        <div class="meeting-top"><div><div class="meeting-date">Feb 19, 2025 10:30 AM</div><span class="badge" style="background:#27AE6020;color:#27AE60">confirmed</span><span style="font-size:13px;color:#4A5568;margin-left:10px">📍 Room B14</span></div></div>
+        <div class="meeting-agenda"><strong>Agenda:</strong> Review design chapter outline</div>
+      </div>
+      <div class="meeting-card" style="border-left:4px solid #27AE60">
+        <div class="meeting-top"><div><div class="meeting-date">Jan 22, 2025 2:00 PM</div><span class="badge" style="background:#27AE6020;color:#27AE60">completed</span><span style="font-size:13px;color:#4A5568;margin-left:10px">📍 Online (Google Meet)</span></div></div>
+        <div class="meeting-agenda"><strong>Agenda:</strong> Proposal feedback discussion</div>
+      </div>
+    </div>
+
+    <!-- ══ NOTIFICATIONS (shared) ══ -->
+    <div id="page-notifications" class="page">
+      <div class="page-title">Notifications</div>
+      <div id="notif-list-student">
+        <div class="page-sub">3 unread notifications</div>
+        <div class="notif-card" style="background:#EBF3FB;border-left:4px solid #3B8DD6"><span style="font-size:22px">💬</span><div style="flex:1"><div style="font-size:13px;font-weight:700;color:#1A1A2E">Dr. Mensah left feedback on your Literature Review submission</div><div style="font-size:11px;color:#8AA0B8;margin-top:3px">2h ago</div></div><div class="notif-dot"></div></div>
+        <div class="notif-card" style="background:#EBF3FB;border-left:4px solid #3B8DD6"><span style="font-size:22px">📅</span><div style="flex:1"><div style="font-size:13px;font-weight:700;color:#1A1A2E">Meeting confirmed for Feb 19 at 10:30 AM in Room B14</div><div style="font-size:11px;color:#8AA0B8;margin-top:3px">1 day ago</div></div><div class="notif-dot"></div></div>
+        <div class="notif-card" style="background:#EBF3FB;border-left:4px solid #3B8DD6"><span style="font-size:22px">⏰</span><div style="flex:1"><div style="font-size:13px;font-weight:700;color:#1A1A2E">Reminder: System Design chapter due in 21 days (Mar 5)</div><div style="font-size:11px;color:#8AA0B8;margin-top:3px">2 days ago</div></div><div class="notif-dot"></div></div>
+        <div class="notif-card" style="background:#fff;border-left:4px solid #D6E4F7"><span style="font-size:22px">✅</span><div style="flex:1"><div style="font-size:13px;color:#1A1A2E">Your project proposal has been approved by Dr. Mensah</div><div style="font-size:11px;color:#8AA0B8;margin-top:3px">Jan 14</div></div></div>
+      </div>
+      <div id="notif-list-supervisor" style="display:none">
+        <div class="page-sub">3 unread notifications</div>
+        <div class="notif-card" style="background:#EBF3FB;border-left:4px solid #3B8DD6"><span style="font-size:22px">📝</span><div style="flex:1"><div style="font-size:13px;font-weight:700;color:#1A1A2E">New proposal submitted by Esi Mensah — awaiting your review</div><div style="font-size:11px;color:#8AA0B8;margin-top:3px">3h ago</div></div><div class="notif-dot"></div></div>
+        <div class="notif-card" style="background:#EBF3FB;border-left:4px solid #3B8DD6"><span style="font-size:22px">📤</span><div style="flex:1"><div style="font-size:13px;font-weight:700;color:#1A1A2E">Amara Osei submitted their Literature Review chapter</div><div style="font-size:11px;color:#8AA0B8;margin-top:3px">1 day ago</div></div><div class="notif-dot"></div></div>
+        <div class="notif-card" style="background:#EBF3FB;border-left:4px solid #3B8DD6"><span style="font-size:22px">📅</span><div style="flex:1"><div style="font-size:13px;font-weight:700;color:#1A1A2E">Meeting request from Liam Boateng for Feb 22 at 2:00 PM</div><div style="font-size:11px;color:#8AA0B8;margin-top:3px">2 days ago</div></div><div class="notif-dot"></div></div>
+        <div class="notif-card" style="background:#fff;border-left:4px solid #D6E4F7"><span style="font-size:22px">📊</span><div style="flex:1"><div style="font-size:13px;color:#1A1A2E">Assessment deadline reminder: 3 assessments pending submission</div><div style="font-size:11px;color:#8AA0B8;margin-top:3px">3 days ago</div></div></div>
+      </div>
+    </div>
+
+    <!-- ══ SUPERVISOR: DASHBOARD ══ -->
+<!-- ══ SUPERVISOR: DASHBOARD ══ -->
+<div id="page-sv-dashboard" class="page">
+
+    <div class="page-title">
+        Supervisor Dashboard
+    </div>
+
+    <div class="page-sub">
+        Supervisor Overview
+    </div>
+
+    <div class="card-grid">
+
+        <div class="stat-card" style="border-top:4px solid #1A5FA8">
+            <div class="stat-num" id="sv-total-students">0</div>
+            <div class="stat-label">Assigned Students</div>
+        </div>
+
+        <div class="stat-card" style="border-top:4px solid #E67E22">
+            <div class="stat-num" id="sv-pending-proposals">0</div>
+            <div class="stat-label">Pending Proposals</div>
+        </div>
+
+        <div class="stat-card" style="border-top:4px solid #3B8DD6">
+            <div class="stat-num" id="sv-meetings-count">0</div>
+            <div class="stat-label">Meetings This Week</div>
+        </div>
+
+        <div class="stat-card" style="border-top:4px solid #E74C3C">
+            <div class="stat-num" id="sv-assessments-count">0</div>
+            <div class="stat-label">Assessments Pending</div>
+        </div>
+
+    </div>
+
+    <div class="section-card">
+
+        <div style="
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:14px;
+            flex-wrap:wrap;
+            gap:10px">
+
+            <div class="section-title" style="margin-bottom:0">
+                Student Progress Overview
+            </div>
+
+            <button
+                class="btn btn-outline"
+                onclick="showPage('sv-students')">
+
+                View All
+
+            </button>
+
+        </div>
+
+        <div class="table-wrap">
+
+            <table class="data-table">
+
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Project</th>
+                        <th>Status</th>
+                        <th>Progress</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="sv-dashboard-table">
+
+                    <tr>
+                        <td colspan="5">
+                            Loading...
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+  </div>
+
+    <!-- ══ SUPERVISOR: MY STUDENTS ══ -->
+  <div id="page-sv-students" class="page">
+      <div class="page-title">My Students</div>
+      <div class="page-sub">5 students assigned for academic year 2024–25</div>
+      <div id="sv-students-container">
+
+    <div class="section-card">
+        No students assigned
+    </div>
+
+    </div>
+
+
+  </div>
+
+  <div id="page-sv-student-details" class="page">
+
+    <div class="page-title">
+        Student Details
+    </div>
+
+    <div id="sv-student-details-container">
+
+        <div class="section-card">
+
+            Loading...
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- ══ SUPERVISOR: PROPOSALS ══ -->
+    <div id="page-sv-proposals" class="page">
+      <div class="page-title">Project Proposals</div>
+      <div class="page-sub">Review and approve student project proposals</div>
+      <div id="sv-proposals-container">
+
+    <div class="proposal-card">
+        No pending proposals
+    </div>
+
+</div>
+    </div>
+
+    <!-- ══ SUPERVISOR: ASSESSMENT ══ -->
+    <div id="page-sv-assessment" class="page">
+      <div class="page-title">Assessment</div>
+      <div class="page-sub">Enter marks for student projects</div>
+      <div class="section-card">
+        <div class="assessment-top">
+          <div class="assessment-top-left"><div class="student-name">Kwame Asante</div><div class="project-name">Smart Inventory for Local Shops</div></div>
+          <div class="grade-box" id="grade-box" style="background:#27AE6015"><div class="grade-num" id="grade-num" style="color:#27AE60">73%</div><div class="grade-band" id="grade-band" style="color:#27AE60">Distinction</div></div>
+        </div>
+        <div class="rubric-row"><div class="rubric-header"><span class="rubric-label">Research &amp; Literature Review</span><span class="rubric-score" id="score-research">72%</span></div><input type="range" class="rubric-range" min="0" max="100" value="72" oninput="updateScore('research',this.value)"></div>
+        <div class="rubric-row"><div class="rubric-header"><span class="rubric-label">Methodology &amp; Approach</span><span class="rubric-score" id="score-methodology">68%</span></div><input type="range" class="rubric-range" min="0" max="100" value="68" oninput="updateScore('methodology',this.value)"></div>
+        <div class="rubric-row"><div class="rubric-header"><span class="rubric-label">Presentation &amp; Communication</span><span class="rubric-score" id="score-presentation">75%</span></div><input type="range" class="rubric-range" min="0" max="100" value="75" oninput="updateScore('presentation',this.value)"></div>
+        <div class="rubric-row"><div class="rubric-header"><span class="rubric-label">Written Report Quality</span><span class="rubric-score" id="score-report">70%</span></div><input type="range" class="rubric-range" min="0" max="100" value="70" oninput="updateScore('report',this.value)"></div>
+        <div class="form-group"><label class="form-label">Overall Comments</label><textarea class="form-textarea" rows="4" placeholder="Enter your assessment comments here..."></textarea></div>
+        <div class="btn-row"><button class="btn btn-primary" style="flex:1;padding:12px">Submit Assessment</button><button class="btn btn-outline" style="padding:12px">Save Draft</button></div>
+      </div>
+    </div>
+
+    <!-- ══ SUPERVISOR: SCHEDULE ══ -->
+    <div id="page-sv-schedule" class="page">
+      <div class="page-title">Meeting Schedule</div>
+      <div class="page-sub">Upcoming and past student meetings</div>
+      <div class="meeting-card" style="border-left:4px solid #27AE60"><div class="meeting-top"><div><div class="meeting-date">Feb 19, 2025 10:30 AM</div><span class="badge" style="background:#27AE6020;color:#27AE60">confirmed</span><span style="font-size:13px;color:#4A5568;margin-left:10px">· Amara Osei · Room B14</span></div><div class="meeting-top-right"><button class="btn btn-default">Add Minutes</button></div></div><div class="meeting-agenda"><strong>Agenda:</strong> Review design chapter outline</div></div>
+      <div class="meeting-card" style="border-left:4px solid #27AE60"><div class="meeting-top"><div><div class="meeting-date">Feb 24, 2025 11:00 AM</div><span class="badge" style="background:#27AE6020;color:#27AE60">confirmed</span><span style="font-size:13px;color:#4A5568;margin-left:10px">· Kwame Asante · Room B14</span></div><div class="meeting-top-right"><button class="btn btn-default">Add Minutes</button></div></div><div class="meeting-agenda"><strong>Agenda:</strong> Implementation review and feedback</div></div>
+      <div class="meeting-card" style="border-left:4px solid #27AE60"><div class="meeting-top"><div><div class="meeting-date">Jan 22, 2025 2:00 PM</div><span class="badge" style="background:#27AE6020;color:#27AE60">completed</span><span style="font-size:13px;color:#4A5568;margin-left:10px">· Amara Osei · Online (Google Meet)</span></div></div><div class="meeting-agenda"><strong>Agenda:</strong> Proposal feedback discussion</div></div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ═══ BOTTOM NAV (mobile) ═══ -->
+<nav id="bottom-nav">
+  <div class="bnav-inner" id="bottom-nav-inner"></div>
+</nav>
+
+<!-- ═══ MODAL OVERLAY ═══ -->
+<div id="modal-overlay" onclick="closeModal(event)">
+
+
+  <!-- Upload -->
+  <div id="modal-upload" class="modal-box" style="display:none" onclick="event.stopPropagation()">
+    <div class="modal-title">Upload Submission</div>
+    <div class="modal-sub">Milestone: System Design &amp; Architecture</div>
+    <div class="drop-zone"><div class="drop-zone-icon">📄</div><div class="drop-zone-title">Drop files here or click to browse</div><div class="drop-zone-sub">PDF or DOCX, max 10MB</div></div>
+    <div class="form-group"><label class="form-label">Notes for Supervisor (optional)</label><textarea class="form-textarea" rows="4" placeholder="Add any notes or comments about your submission..."></textarea></div>
+    <div class="btn-row"><button class="btn btn-primary" style="flex:1;padding:12px">📤 Submit</button><button class="btn btn-default" style="padding:12px" onclick="closeModalDirect()">Cancel</button></div>
+  </div>
+  <!-- Meeting -->
+  <div id="modal-meeting" class="modal-box" style="display:none" onclick="event.stopPropagation()">
+    <div class="modal-title">Request a Meeting</div>
+    <div style="margin-bottom:16px"></div>
+    <div class="form-group"><label class="form-label">Preferred Date &amp; Time</label><input type="datetime-local" class="form-input"></div>
+    <div class="form-group"><label class="form-label">Meeting Type</label><select class="form-select"><option>In-Person (on campus)</option><option>Online (video call)</option></select></div>
+    <div class="form-group"><label class="form-label">Agenda / Purpose</label><textarea class="form-textarea" rows="4" placeholder="Describe what you'd like to discuss..."></textarea></div>
+    <div class="btn-row"><button class="btn btn-primary" style="flex:1;padding:12px">Send Request</button><button class="btn btn-default" style="padding:12px" onclick="closeModalDirect()">Cancel</button></div>
+  </div>
+  <!-- Feedback -->
+  <div id="modal-feedback" class="modal-box" style="display:none" onclick="event.stopPropagation()">
+    <div class="modal-title">Leave Feedback</div>
+    <div class="modal-sub">For: Amara Osei — System Design Submission</div>
+    <div class="form-group"><label class="form-label">Quality Rating</label><div class="star-row" id="star-row"><button class="star-btn" onclick="setStars(1)" style="background:#1A5FA8;color:#fff">★</button><button class="star-btn" onclick="setStars(2)" style="background:#1A5FA8;color:#fff">★</button><button class="star-btn" onclick="setStars(3)" style="background:#1A5FA8;color:#fff">★</button><button class="star-btn" onclick="setStars(4)" style="background:#1A5FA8;color:#fff">★</button><button class="star-btn" onclick="setStars(5)" style="background:#EBF3FB;color:#1A5FA8">☆</button></div></div>
+    <div class="form-group"><label class="form-label">Feedback Comments</label><textarea class="form-textarea" rows="5" placeholder="Provide detailed feedback on the submission..."></textarea></div>
+    <div class="btn-row"><button class="btn btn-primary" style="flex:1;padding:12px">Send Feedback</button><button class="btn btn-default" style="padding:12px" onclick="closeModalDirect()">Cancel</button></div>
+  </div>
+  <!-- Approve -->
+  <div id="modal-approve" class="modal-box" style="display:none" onclick="event.stopPropagation()">
+    <div class="modal-title">Approve Proposal</div>
+    <div class="modal-sub">Hospital Queue Management App — Esi Mensah</div>
+    <div class="info-box" style="background:#F0FFF4;border:1px solid #27AE60"><div style="font-size:13px;color:#27AE60;font-weight:700">✅ You are about to approve this proposal</div><div style="font-size:12px;color:#4A5568;margin-top:4px">The student will be notified and can proceed to the next phase.</div></div>
+    <div class="form-group"><label class="form-label">Optional Comments</label><textarea class="form-textarea" rows="4" placeholder="Any guidance for the student as they begin..."></textarea></div>
+    <div class="btn-row"><button class="btn btn-success" style="flex:1;padding:12px">✓ Confirm Approval</button><button class="btn btn-default" style="padding:12px" onclick="closeModalDirect()">Cancel</button></div>
+  </div>
+
+  <!-- Create Project -->
+  <div id="modal-create-project"
+      class="modal-box"
+      style="display:none"
+      onclick="event.stopPropagation()">
+
+      <div class="modal-title">Create Project</div>
+      <div class="modal-sub">Submit your project proposal</div>
+
+      <div class="form-group">
+          <label class="form-label">Project Title</label>
+          <input type="text"
+                id="new-project-title"
+                class="form-input"
+                placeholder="Enter project title">
+      </div>
+
+      <div class="form-group">
+          <label class="form-label">Project Description</label>
+          <textarea id="new-project-description"
+                    class="form-textarea"
+                    rows="5"
+                    placeholder="Describe your project"></textarea>
+      </div>
+
+      <div class="form-group">
+          <label class="form-label">Objectives</label>
+          <textarea id="new-project-objectives"
+                    class="form-textarea"
+                    rows="5"
+                    placeholder="Enter project objectives"></textarea>
+      </div>
+
+      <div class="btn-row">
+          <button class="btn btn-primary"
+                  style="flex:1;padding:12px"
+                  onclick="createProject()">
+              Save Project
+          </button>
+
+          <button class="btn btn-default"
+                  style="padding:12px"
+                  onclick="closeModalDirect()">
+              Cancel
+          </button>
+      </div>
+
+  </div>
+
+  <div id="modal-edit-project"
+      class="modal-box"
+      style="display:none"
+      onclick="event.stopPropagation()">
+
+      <div class="modal-title">Edit Project</div>
+
+      <div class="form-group">
+          <label class="form-label">Project Title</label>
+          <input type="text"
+                id="edit-project-title"
+                class="form-input">
+      </div>
+
+      <div class="form-group">
+          <label class="form-label">Description</label>
+          <textarea
+              id="edit-project-description"
+              class="form-textarea"
+              rows="5"></textarea>
+      </div>
+
+      <div class="form-group">
+          <label class="form-label">Objectives</label>
+          <textarea
+              id="edit-project-objectives"
+              class="form-textarea"
+              rows="5"></textarea>
+      </div>
+
+      <div class="btn-row">
+
+          <button
+              class="btn btn-primary"
+              style="flex:1"
+              onclick="updateProject()">
+
+              Save Changes
+
+          </button>
+
+          <button
+              class="btn btn-default"
+              onclick="closeModalDirect()">
+
+              Cancel
+
+          </button>
+
+      </div>
+
+  </div>
+
+  <div id="modal-student-details" class="modal-overlay" style="display:none">
+    <div class="modal-box">
+
+        <div class="modal-title">
+            Student Details
+        </div>
+
+        <div id="student-details-content">
+
+            Loading...
+
+        </div>
+
+        <div class="btn-row">
+
+            <button
+                class="btn btn-success"
+                id="approve-btn">
+
+                Approve
+
+            </button>
+
+            <button
+                class="btn btn-danger"
+                id="reject-btn">
+
+                Reject
+
+            </button>
+
+            <button
+                class="btn btn-default"
+                onclick="closeModalDirect()">
+
+                Close
+
+            </button>
+
+        </div>
+
+    </div>
+  </div>
+
+  <div id="milestone-modal" class="modal-box" onclick="event.stopPropagation()">
+
+          <div class="modal-content">
+
+              <div class="modal-title" id="milestone-modal-title">
+                  Add Milestone
+              </div>
+
+              <div class="form-group">
+                  <label class="form-label">Milestone Title</label>
+                  <input id="mile-title" class="form-input" type="text">
+              </div>
+
+              <div class="form-group">
+                  <label class="form-label">Description</label>
+                  <textarea id="mile-description" class="form-textarea"></textarea>
+              </div>
+
+              <div class="form-group">
+                  <label class="form-label">Due Date</label>
+                  <input id="mile-date" type="date" class="form-input">
+              </div>
+
+              <div class="btn-row">
+                  <button class="btn btn-primary" onclick="saveMilestone()">
+                      Save Milestone
+                  </button>
+
+                  <button class="btn btn-default" onclick="closeMilestoneModal()">
+                      Cancel
+                  </button>
+              </div>
+
+          </div>
+
+  </div>
+</div>
+
+
+</body>
+</html>
