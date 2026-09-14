@@ -6,7 +6,14 @@ require_once "../../config/database.php";
 
 header("Content-Type: application/json");
 
-if(!isset($_SESSION['user_id'])){
+
+/*
+|--------------------------------------------------------------------------
+| CHECK LOGIN
+|--------------------------------------------------------------------------
+*/
+
+if (!isset($_SESSION['user_id'])) {
 
     echo json_encode([
         "success" => false,
@@ -16,37 +23,24 @@ if(!isset($_SESSION['user_id'])){
     exit;
 }
 
-$data = json_decode(file_get_contents("php://input"));
 
-$id = $data->id ?? 0;
+/*
+|--------------------------------------------------------------------------
+| FIXED MILESTONE SYSTEM
+|--------------------------------------------------------------------------
+|
+| Students cannot delete milestones.
+| The six milestones are automatically generated
+| when a proposal is approved.
+|
+|--------------------------------------------------------------------------
+*/
 
-$stmt = $conn->prepare("
-    DELETE FROM milestones
-    WHERE id = ?
-");
+echo json_encode([
+    "success" => false,
+    "message" => "Milestones are fixed and cannot be deleted."
+]);
 
-$success = $stmt->execute([$id]);
+exit;
 
-if($stmt->rowCount() === 0){
-
-    echo json_encode([
-        "success" => false,
-        "message" => "Milestone not found"
-    ]);
-
-    exit;
-}
-if($success){
-
-    echo json_encode([
-        "success" => true,
-        "message" => "Milestone deleted successfully"
-    ]);
-
-}else{
-
-    echo json_encode([
-        "success" => false,
-        "message" => "Failed to delete milestone"
-    ]);
-}
+?>
